@@ -4,8 +4,8 @@ const path = require("path");
 const { uploadFile } = require("./CreateS3Bucket");
 const { getListOfObjects } = require("./ListObjects");
 
-const getObjectsFromBucket = () => {
-  getListOfObjects("mybucket")
+const getObjectsFromBucket = (bucketname) => {
+  getListOfObjects(bucketname)
     .then((response) => {
       console.log(response);
     })
@@ -14,14 +14,14 @@ const getObjectsFromBucket = () => {
     });
 };
 
-getObjectsFromBucket();
+getObjectsFromBucket("mybucket");
 
-const testUpload = () => {
+const uploadObjectToBucket = (bucketname) => {
   const filePath = path.resolve(__dirname, "listBuckets.js");
   const fileStream = fs.createReadStream(filePath);
   const now = new Date();
-  const fileName = `test-image-${now.toISOString()}.js`;
-  uploadFile(fileStream, fileName)
+  const fileName = `test-${now.toISOString()}.js`;
+  uploadFile(fileStream, fileName, bucketname)
     .then((response) => {
       console.log(":)");
       console.log(response);
@@ -31,3 +31,5 @@ const testUpload = () => {
       console.log(err);
     });
 };
+
+uploadObjectToBucket("mybucket");

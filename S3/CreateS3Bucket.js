@@ -10,11 +10,11 @@ AWS.config.update({
 
 var s3 = new AWS.S3();
 
-const uploadFile = async (data, fileName) =>
+const uploadFile = async (data, fileName, bucketname) =>
   new Promise((resolve) => {
     s3.upload(
       {
-        Bucket: "mybucket",
+        Bucket: bucketname,
         Key: fileName,
         Body: data,
       },

@@ -1,6 +1,15 @@
-#S3-Ultimate-guide-nodejs
+# S3-Ultimate-guide-nodejs
 
-## Configure localstack
+### Git origin
+
+```
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/jitunayak/localstack-aws-node.git
+git push -u origin main
+```
+
+### Configure localstack
 
 ### docker compose file modifications
 
@@ -30,7 +39,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
 ```
 
-### jump to terminal
+#### jump to terminal
 
 ```
 
@@ -43,6 +52,8 @@ services:
 aws s3 cp <anyfile> s3://mybucket/<anyfilename> --endpoint https://localhost:4566
 ```
 
+#### We will install necessary npm packages
+
 ```
 npm i
 npm i aws-sdk
@@ -52,7 +63,7 @@ sls create -t aws-nodejs
 
 createBucket.js
 
-Add below to line to config AWS, otherwise it will keep looking for aws cloud not local path
+#### Add below to line to config AWS, otherwise it will keep looking for aws cloud not local path
 
 ```
 AWS.config.update({
@@ -63,6 +74,3 @@ AWS.config.update({
   s3ForcePathStyle: true,
 });
 ```
-
-
-

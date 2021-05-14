@@ -1,0 +1,18 @@
+service: lambdademo
+plugins:
+  - serverless-localstack
+
+custom:
+  localstack:
+    debug: true
+    stages: local
+    endpointFile: localstack_endpoints.json
+frameworkVersion: "2"
+provider:
+  name: aws
+  runtime: nodejs14.4.0
+  lambdaHashingVersion: 20201221
+
+functions:
+  hello:
+    handler: handler.hello
