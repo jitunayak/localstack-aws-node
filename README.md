@@ -1,6 +1,8 @@
-# S3-Ultimate-guide-nodejs
+# localstack-aws-nodejs 🌩
 
-### Git origin
+## 📀 S3-Ultimate-guide-nodejs
+
+#### Git origin
 
 ```
 git commit -m "first commit"
@@ -74,3 +76,5 @@ AWS.config.update({
   s3ForcePathStyle: true,
 });
 ```
+
+### Check respective folders❗️ for their instructions :)

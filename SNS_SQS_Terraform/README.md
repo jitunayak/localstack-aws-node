@@ -1,14 +1,22 @@
-# create the bucket
+# SNS, SQS, Terraform 🔥
 
+#### create the bucket
+
+```
 aws --endpoint-url=http://localhost:4566 s3 mb s3://local-aws-bucket
+```
 
-# list all buckets
+#### list all buckets
 
+```
 aws --endpoint-url=http://localhost:4566 s3 ls
+```
 
 npm init
 
+```
 aws sqs create-queue --queue-name local-queue --endpoint-url=http://localhost:4566 --region us-east-1
+```
 
 #### Response
 
@@ -18,12 +26,14 @@ aws sqs create-queue --queue-name local-queue --endpoint-url=http://localhost:45
 }
 ```
 
+```
 aws sns create-topic \
 --name local-topic \
 --endpoint-url=http://localhost:4566/ \
 --region us-east-1
+```
 
-### Response
+#### Response
 
 ```
 {
@@ -32,6 +42,9 @@ aws sns create-topic \
 
 ```
 
+#### We will subscribe it
+
+```
 aws \
 sns subscribe \
 --notification-endpoint=http://localhost:4566/000000000000/local-queue \
@@ -39,6 +52,7 @@ sns subscribe \
 --protocol sqs \
 --endpoint-url=http://localhost:4566 \
 --region us-east-1
+```
 
 ### Response
 
@@ -97,3 +111,5 @@ RECEIVED:  {
 x n
 
 ```
+
+## Thank you! Happy Coding :)
