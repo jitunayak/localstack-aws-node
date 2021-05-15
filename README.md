@@ -2,6 +2,12 @@
 
 ## 📀 S3-Ultimate-guide-nodejs
 
+#### Official Docs could be found from below
+
+```
+https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html
+```
+
 #### Git origin
 
 ```

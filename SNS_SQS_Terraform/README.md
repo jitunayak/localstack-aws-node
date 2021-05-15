@@ -63,6 +63,12 @@ sns subscribe \
 
 ```
 
+Let's download terraform from hashicorp
+if you are running on macos/linux
+put the binary file in the bin folder /usr/local/bin
+
+Below command will donwload the latest aws cli from hashicorp
+
 ```
 terraform init
 ```
